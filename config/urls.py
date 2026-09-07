@@ -18,9 +18,12 @@ from django.contrib import admin
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 
+from vision.views import *
+
 router = DefaultRouter()
+router.register(r"notes", NoteViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", include(router.urls))
+    path("api/", include(router.urls))
 ]
