@@ -1,0 +1,27 @@
+[project]
+name = "vision_note_backend"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "João Victor Portela Rocha",email = "joaovictor.portela@proton.me"},
+]
+dependencies = ["django>=6.1.1"]
+requires-python = "==3.13.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false
+
+[tool.pdm.scripts]
+dev = "python manage.py runserver 0.0.0.0:19003"
+createsuperuser = "python manage.py createsuperuser"
+startapp = "python manage.py startapp"
+pre_migrate = "python manage.py makemigrations"
+migrate = "python manage.py migrate"
+shell = "python manage.py shell"
+shellp = "python manage.py shell_plus"
+test = "python manage.py test"
+loaddata = "python manage.py loaddata core.json"
+dumpdata = "python manage.py dumpdata --indent 2"
